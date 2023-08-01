@@ -1,0 +1,120 @@
+.header {
+	background-color: var(--white);
+	padding: 18px 0;
+
+	&__body {
+		display: flex;
+		align-items: center;
+		gap: 32px;
+	}
+
+	&__logo {
+		//* чтобы лого не сжимался при уменьшении экрана
+		flex-shrink: 0;
+	}
+
+	&__menu {
+		margin-left: auto;
+	}
+
+	&__contact {
+		display: flex;
+		flex-direction: column;
+		padding-left: 86px;
+		flex-shrink: 0; //* чтобы контент не сжимался при увеличении кол-ва пунктов меню и уменьшении экрана
+		position: relative;
+
+		// вертикальная полоска
+		&::before {
+			content: '';
+			position: absolute;
+			top: 6px; // чтобы укоротить полоску по длине
+			bottom: 6px; // чтобы укоротить полоску по длине
+			left: 0;
+			width: 1px;
+			background-color: var(--ultralight-gray);
+		}
+	}
+
+	&__contact-text {
+		font-weight: 500;
+		line-height: lh(24, 16);
+	}
+
+	&__contact-phone {
+		text-decoration: none;
+		color: var(--black);
+		font-size: rem(18);
+		transition: all 0.5s;
+
+		&::before {
+			content: '';
+			background: var(--green) url('../images/icons/phone.svg') center/20px no-repeat;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 32px;
+			transition: all 0.5s;
+		}
+
+		&:hover {
+			color: var(--orange);
+
+			&::before {
+				background-color: var(--orange);
+			}
+		}
+	}
+}
+
+.logo {
+	transition: all 0.5s;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+.menu {
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+		gap: 0 40px;
+		flex-wrap: wrap; //* чтоб ломался при большом кол-ве пунктов меню
+	}
+
+	&__item {
+	}
+
+	&__link {
+		color: var(--black);
+		text-decoration: none;
+		transition: all 0.5s;
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -3px; //* чтобы полоса не налазила на буквы
+			left: 50%; //* чтобы полоса выезжала из центра
+			right: 50%; //* чтобы полоса выезжала из центра
+			height: 2px;
+			background-color: var(--orange);
+			transition: all 0.5s;
+		}
+
+		&:hover {
+			color: var(--orange);
+
+			&::after {
+				left: 0; //* чтобы полоса выезжала из центра
+				right: 0; //* чтобы полоса выезжала из центра
+			}
+		}
+	}
+}

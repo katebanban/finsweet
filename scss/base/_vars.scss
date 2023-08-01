@@ -1,0 +1,27 @@
+:root {
+	// colors
+
+	--gray: #787676;
+	--light-gray: #939191;
+	--ultralight-gray: #d8d7d7;
+	--white: #fff;
+	--black: #1e1b1b;
+	--orange: #ff6433;
+	--green: #61c3a1;
+	--green2: #5cba99;
+
+	// sizes
+	--container-width: 1280px;
+	--container-gap: 15px;
+
+	// fonts
+	--main-font: "Manrope", sans-serif;
+}
+
+@function rem($px) {
+	@return calc(($px / 16) * 1rem);
+}
+
+@function lh($line-height, $font-size) {
+	@return calc(($line-height / $font-size) * 100%);
+}
