@@ -55,6 +55,10 @@ body {
 }
 
 //* COMPONENTS
+.no-scroll {
+	overflow: hidden;
+}
+
 .btn {
 	text-decoration: none;
 	color: var(--white);

@@ -1,13 +1,28 @@
 .first {
+	//* ЛОКАЛЬНЫЕ ПЕРЕМЕННЫЕ
+	--padding-top: 50px; // на глаз
+	--padding-bottom: 50px; // на глаз
+
 	background-color: var(--white);
-	padding: 50px 0; // на глаз, временно
-	min-height: 100vh;
+	padding-top: calc(var(--header-height) + var(--padding-top));
+	padding-bottom: var(--padding-bottom);
+
+	@media (max-width: 1440px) {
+		--padding-top: 25px;
+	}
 
 	&__body {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: 20px; // от себя
+
+		min-height: calc(100vh - var(--header-height) - var(--padding-top) - var(--padding-bottom)); //* регулирует высоту
+
+		@media (max-width: 1024px) {
+			flex-direction: column-reverse;
+			min-height: 100%; // переписываем высоту (потому что в д.сл. это надо, вот и всё объяснение :D)
+		}
 	}
 
 	&__content {
@@ -25,19 +40,40 @@
 		&:not(:last-child) {
 			margin-bottom: 32px;
 		}
+
+		@media (max-width: 768px) {
+			font-size: rem(52);
+		}
+
+		@media (max-width: 550px) {
+			font-size: rem(35);
+		}
 	}
 
 	&__btn-box {
 		display: flex;
 		align-items: center;
-		gap: 32px;
+		flex-wrap: wrap;
+		gap: 16px 32px;
+
+		@media (max-width: 550px) {
+			justify-content: center;
+		}
 
 		&:not(:last-child) {
 			margin-bottom: 48px;
+
+			@media (max-width: 550px) {
+				margin-bottom: 32px;
+			}
 		}
 	}
 
 	&__btn {
+		@media (max-width: 550px) {
+			width: 100%;
+			text-align: center;
+		}
 	}
 
 	&__btn-video {
@@ -94,12 +130,22 @@
 		margin: 0;
 		font-size: rem(18);
 		color: var(--black);
+
+		@media (max-width: 550px) {
+			font-size: rem(16);
+		}
 	}
 
 	&__image-box {
 		flex: 0 1 45%; // на глаз
 		min-height: 632px;
 		position: relative;
+
+		@media (max-width: 1024px) {
+			width: 100%;
+			min-height: unset;
+			padding-bottom: 50%; // адаптивная картинка
+		}
 	}
 
 	&__image {
@@ -188,5 +234,9 @@
 		img {
 			display: block; //* Чтобы картинка заняла весь родительский элемент по высоте и ширине
 		}
+	}
+
+	@media (max-width: 1024px) {
+		display: none;
 	}
 }
