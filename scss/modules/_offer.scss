@@ -1,0 +1,147 @@
+.offer {
+	background-color: var(--bg-gray);
+	padding: 128px 0;
+
+	@media (max-width: 1024px) {
+		padding: 90px 0;
+	}
+
+	@media (max-width: 768px) {
+		padding: 60px 0;
+	}
+
+	&__body {
+	}
+
+	&__subtitle {
+		max-width: 890px;
+		margin: 0 auto;
+		text-align: center;
+
+		color: var(--black);
+		font-size: rem(24);
+		line-height: lh(36, 24);
+
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+
+		@media (max-width: 550px) {
+			font-size: rem(20);
+		}
+	}
+
+	&__title {
+		max-width: 890px;
+		margin: 0 auto;
+		text-align: center;
+
+		&:not(:last-child) {
+			margin-bottom: 64px;
+
+			@media (max-width: 768px) {
+				margin-bottom: 32px;
+			}
+		}
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		--columns: 4;
+		--gap-horizontal: 8px;
+		--width: calc((100% - (var(--gap-horizontal) * (var(--columns) - 1))) / var(--columns)); //! (100% - (горизонтальные отступ * (кол-во колонок - 1))) / кол-во колонок === отсчитывает ширину карточки
+
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px var(--gap-horizontal);
+
+		&:not(:last-child) {
+			margin-bottom: 32px;
+		}
+
+		@media (max-width: 1024px) {
+			--columns: 3;
+		}
+
+		@media (max-width: 768px) {
+			--columns: 2;
+		}
+
+		@media (max-width: 550px) {
+			--columns: 1;
+		}
+	}
+
+	&__item {
+		flex: 0 1 var(--width); //! ширина карточки
+	}
+
+	&__link {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 16px;
+		text-decoration: none;
+		color: var(--black);
+		font-size: rem(18);
+		transition: all 0.3s;
+
+		svg {
+			width: 52px;
+			height: 32px;
+			fill: currentColor;
+		}
+
+		&:hover {
+			color: var(--orange);
+		}
+	}
+}
+
+.offer-item {
+
+	&__link {
+		padding: 16px; // от себя
+		min-height: 232px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		text-decoration: none;
+		color: var(--black);
+		text-align: center;
+		background-color: var(--white);
+
+		transition: all 0.3s;
+
+		&:hover {
+			background-color: var(--orange);
+			color: var(--white);
+		}
+	}
+
+	&__icon {
+		width: 45px; // от себя
+		height: 45px; // от себя
+
+		svg {
+			height: 100%;
+			fill: currentColor; //! берёт цвет у родителя
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__text {
+		margin: 0;
+		padding: 0;
+		font-size: rem(24);
+		line-height: lh(36, 24);
+	}
+}

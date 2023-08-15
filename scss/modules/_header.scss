@@ -18,7 +18,7 @@
 		background-color: var(--white);
 		box-shadow: 0 0 5px 0 rgba(#000, 0.2);
 		z-index: 1;
-		transition: right 0.5s;
+		transition: right 0.3s;
 	}
 
 	&.active {
@@ -92,7 +92,7 @@
 		text-decoration: none;
 		color: var(--black);
 		font-size: rem(18);
-		transition: all 0.5s;
+		transition: all 0.3s;
 
 		&::before {
 			content: "";
@@ -104,7 +104,7 @@
 			top: 50%;
 			transform: translateY(-50%);
 			left: 32px;
-			transition: all 0.5s;
+			transition: all 0.3s;
 
 			@media (max-width: 1024px) {
 				display: none;
@@ -122,7 +122,7 @@
 }
 
 .logo {
-	transition: all 0.5s;
+	transition: all 0.3s;
 
 	&:hover {
 		transform: scale(1.1);
@@ -143,7 +143,7 @@
 		flex-direction: column;
 		align-items: center;
 		overflow: auto;
-		transition: right 0.5s;
+		transition: right 0.3s;
 
 		&.active {
 			right: 0;
@@ -171,7 +171,7 @@
 	&__link {
 		color: var(--black);
 		text-decoration: none;
-		transition: all 0.5s;
+		transition: all 0.3s;
 		position: relative;
 
 		@media (max-width: 1024px) {
@@ -186,7 +186,7 @@
 			right: 50%; //* чтобы полоса выезжала из центра
 			height: 2px;
 			background-color: var(--orange);
-			transition: all 0.5s;
+			transition: all 0.3s;
 		}
 
 		&:hover {
@@ -221,7 +221,7 @@
 		width: 100%;
 		height: 2px;
 		background-color: var(--black);
-		transition: all 0.3s; // тут специально ускорена анимация, так лучше смотрится
+		transition: all 0.3s;
 	}
 
 	&::before,
@@ -232,7 +232,7 @@
 		width: 100%;
 		height: 2px;
 		background-color: var(--black);
-		transition: all 0.5s;
+		transition: all 0.3s;
 	}
 
 	&::before {

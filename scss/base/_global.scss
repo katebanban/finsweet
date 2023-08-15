@@ -10,6 +10,7 @@ html {
 
 html,
 body {
+	scroll-behavior: smooth;
 	min-height: 100vh;
 }
 
@@ -67,12 +68,27 @@ body {
 	padding: 16px 40px;
 	border-radius: 12px;
 	font-size: rem(18);
-	transition: all 0.5s;
+	transition: all 0.3s;
 	border: 2px solid transparent;
 
 	&:hover {
 		border-color: var(--orange);
 		background: transparent;
 		color: var(--orange);
+	}
+}
+
+.section-title {
+	color: var(--black);
+	font-weight: 800;
+	font-size: rem(58);
+	line-height: lh(76, 58);
+
+	@media (max-width: 768px) {
+		font-size: rem(42);
+	}
+
+	@media (max-width: 550px) {
+		font-size: rem(28);
 	}
 }
