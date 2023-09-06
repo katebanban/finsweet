@@ -1,0 +1,124 @@
+.process {
+	padding: 135px 0; // от себя
+	background: var(--white);
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		gap: 32px; // от себя
+		width: 90%; // на глаз, вместо правого паддинга, потому что секция Уже стандартного контейнера
+	}
+
+	&__info {
+		flex: 0 1 50%; // на глаз
+	}
+
+	&__title {
+		@extend %reset;
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__text {
+		@extend %reset;
+
+		max-width: 437px;
+
+		&:not(:last-child) {
+			margin-bottom: 32px;
+		}
+	}
+
+	&__btn {
+	}
+
+	&__list {
+		@extend %reset;
+		list-style-type: none;
+
+		flex: 0 1 39%; // на глаз
+
+		//! Счётчик
+		counter-reset: myCounter;
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+}
+
+.process-item {
+	position: relative;
+	padding: 13px 0 0 96px;
+
+	&::before {
+		//! для всех item добавляем 0 в начале
+		counter-increment: myCounter;
+		content: "0" counter(myCounter);
+
+		@extend %flex-center;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 72px;
+		height: 72px;
+		background: url('../images/icons/circle-decor.png') var(--purple);
+		border-radius: 50%;
+
+		font-weight: 700;
+		font-size: rem(32);
+		line-height: lh(24, 32);
+		color: var(--white);
+	}
+
+	&:nth-child(n + 10) {
+		&::before {
+			//! для всех item после 9 пишем без нуля
+			counter-increment: myCounter;
+			content: counter(myCounter);
+		}
+	}
+
+	&::after {
+		// полоска (штриховая)
+		content: '';
+		position: absolute;
+		left: 35px; // примерно до середины фиолетового кружка
+		bottom: 12px; // на глаз
+		display: block; // чтобы потом убрать последнюю полоску
+		height: calc(100% - 72px - 16px - 12px); // высота кружка - растояние от кружка до полоски - bottom
+		border: 1px dashed var(--orange);
+	}
+
+	&:last-child {
+		&::after {
+			display: none;
+		}
+	}
+	
+	&__title {
+		@extend %reset;
+
+		color: var(--black);
+		font-weight: 700;
+		font-size: rem(32);
+		line-height: lh(48, 32);
+
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+	}
+
+	&__text {
+		@extend %reset;
+
+		font-size: rem(18);
+
+		max-width: 336px;
+	}
+}

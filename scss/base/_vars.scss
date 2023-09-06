@@ -10,6 +10,7 @@
 	--orange: #ff6433;
 	--green: #61c3a1;
 	--green2: #5cba99;
+	--purple: #661CE7;
 
 	// sizes
 	--container-width: 1280px;
@@ -26,4 +27,16 @@
 
 @function lh($line-height, $font-size) {
 	@return calc(($line-height / $font-size) * 100%);
+}
+
+// EXTENDS
+%reset {
+	margin: 0;
+	padding: 0;
+}
+
+%flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
