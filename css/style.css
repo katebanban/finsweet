@@ -746,11 +746,31 @@ body {
   padding: 135px 0;
   background: var(--white);
 }
+@media (max-width: 1024px) {
+  .process {
+    padding: 90px 0;
+  }
+}
+@media (max-width: 768px) {
+  .process {
+    padding: 60px 0;
+  }
+}
 .process__body {
   display: flex;
   justify-content: space-between;
   gap: 32px;
   width: 90%;
+}
+@media (max-width: 1024px) {
+  .process__body {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .process__body {
+    flex-direction: column;
+  }
 }
 .process__info {
   flex: 0 1 50%;
@@ -761,13 +781,29 @@ body {
 .process__text {
   max-width: 437px;
 }
+@media (max-width: 768px) {
+  .process__text {
+    max-width: 100%;
+  }
+}
 .process__text:not(:last-child) {
   margin-bottom: 32px;
+}
+@media (max-width: 550px) {
+  .process__btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 .process__list {
   list-style-type: none;
   flex: 0 1 39%;
   counter-reset: myCounter;
+}
+@media (max-width: 1024px) {
+  .process__list {
+    flex: 0 1 50%;
+  }
 }
 .process__item:not(:last-child) {
   margin-bottom: 16px;
@@ -776,6 +812,11 @@ body {
 .process-item {
   position: relative;
   padding: 13px 0 0 96px;
+}
+@media (max-width: 550px) {
+  .process-item {
+    padding: 8px 0 0 68px;
+  }
 }
 .process-item::before {
   counter-increment: myCounter;
@@ -786,11 +827,21 @@ body {
   width: 72px;
   height: 72px;
   background: url("../images/icons/circle-decor.png") var(--purple);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
   border-radius: 50%;
   font-weight: 700;
   font-size: 2rem;
   line-height: 75%;
   color: var(--white);
+}
+@media (max-width: 550px) {
+  .process-item::before {
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+  }
 }
 .process-item:nth-child(n+10)::before {
   counter-increment: myCounter;
@@ -805,6 +856,12 @@ body {
   height: calc(100% - 72px - 16px - 12px);
   border: 1px dashed var(--orange);
 }
+@media (max-width: 550px) {
+  .process-item::after {
+    left: 25px;
+    height: calc(100% - 52px - 16px - 12px);
+  }
+}
 .process-item:last-child::after {
   display: none;
 }
@@ -814,10 +871,25 @@ body {
   font-size: 2rem;
   line-height: 150%;
 }
+@media (max-width: 550px) {
+  .process-item__title {
+    font-size: 1.5rem;
+  }
+}
 .process-item__title:not(:last-child) {
   margin-bottom: 8px;
 }
 .process-item__text {
   font-size: 1.125rem;
   max-width: 336px;
+}
+@media (max-width: 768px) {
+  .process-item__text {
+    max-width: 100%;
+  }
+}
+@media (max-width: 550px) {
+  .process-item__text {
+    font-size: 1rem;
+  }
 }
