@@ -76,6 +76,16 @@ body {
 		background: transparent;
 		color: var(--orange);
 	}
+
+	&--black {
+		background: var(--black);
+
+		&:hover {
+			background: transparent;
+			border-color: var(--black);
+			color: var(--black);
+		}
+	}
 }
 
 .section-title {

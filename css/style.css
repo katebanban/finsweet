@@ -15,7 +15,7 @@
   --main-font: "Manrope", sans-serif;
 }
 
-.process-item__text, .process-item__title, .process__list, .process__text, .process__title {
+.call-to-action__title, .process-item__text, .process-item__title, .process__list, .process__text, .process__title {
   margin: 0;
   padding: 0;
 }
@@ -134,6 +134,14 @@ body {
   border-color: var(--orange);
   background: transparent;
   color: var(--orange);
+}
+.btn--black {
+  background: var(--black);
+}
+.btn--black:hover {
+  background: transparent;
+  border-color: var(--black);
+  color: var(--black);
 }
 
 .section-title {
@@ -891,5 +899,79 @@ body {
 @media (max-width: 550px) {
   .process-item__text {
     font-size: 1rem;
+  }
+}
+
+.call-to-action {
+  position: relative;
+}
+.call-to-action__image-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.call-to-action__image {
+  position: relative;
+  width: 100%;
+}
+.call-to-action__image img,
+.call-to-action__image source {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.call-to-action__body {
+  position: relative;
+  z-index: 2;
+  background: var(--orange);
+  color: var(--white);
+  padding: 128px 60px;
+  width: 60%;
+}
+@media (max-width: 1024px) {
+  .call-to-action__body {
+    padding: 90px 30px;
+    width: 70%;
+  }
+}
+@media (max-width: 768px) {
+  .call-to-action__body {
+    padding: 60px 30px;
+  }
+}
+@media (max-width: 550px) {
+  .call-to-action__body {
+    width: 90%;
+  }
+}
+.call-to-action__title {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 140%;
+}
+.call-to-action__title:not(:last-child) {
+  margin-bottom: 48px;
+}
+@media (max-width: 768px) {
+  .call-to-action__title {
+    font-size: 2.625rem;
+  }
+}
+@media (max-width: 550px) {
+  .call-to-action__title {
+    font-size: 1.75rem;
+  }
+}
+@media (max-width: 550px) {
+  .call-to-action__btn {
+    width: 100%;
+    text-align: center;
   }
 }
