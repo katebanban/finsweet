@@ -1,0 +1,50 @@
+.experience {
+	padding: 48px 0;
+	background: var(--bg-gray);
+
+	&__list {
+		@extend %reset;
+		list-style-type: none;
+
+		// flx + Tab
+		--gap: 50px; // от себя, потому что на макете отступ был слишком большой
+		--column: 4;
+		--width: calc((100% - var(--gap) * (var(--column) - 1)) / var(--column));
+		
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px var(--gap);
+
+		@media (max-width: 1024px) {
+			--column: 3;
+		}
+
+		@media (max-width: 768px) {
+			--column: 2;
+		}
+
+		@media (max-width: 550px) {
+			--column: 1;
+			text-align: center;
+		}
+	}
+
+	&__item {
+		flex: 0 1 var(--width);
+	}
+
+	&__number {
+		font-weight: 800;
+		font-size: rem(58);
+		line-height: lh(76, 58);
+		color: var(--purple);
+	}
+
+	&__text {
+		@extend %reset;
+
+		font-size: rem(24);
+		line-height: lh(36, 24);
+		color: var(--gray);
+	}
+}
