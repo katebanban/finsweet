@@ -89,6 +89,8 @@ body {
 }
 
 .section-title {
+	@extend %reset;
+
 	color: var(--black);
 	font-weight: 800;
 	font-size: rem(58);
