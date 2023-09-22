@@ -1,0 +1,177 @@
+.blog {
+	padding: 132px 0;
+	background: var(--white);
+
+	@media (max-width: 1024px) {
+		padding: 90px 0;
+	}
+
+	@media (max-width: 768px) {
+		padding: 60px 0;
+	}
+
+	&__body {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 48px;
+
+			@media (max-width: 768px) {
+				margin-bottom: 32px;
+			}
+		}
+	}
+
+	&__categories-list {
+		@extend %reset;
+		list-style-type: none;
+
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 30px;
+
+		&:not(:last-child) {
+			margin-bottom: 46px;
+		}
+
+		@media (max-width: 768px) {
+			flex-wrap: nowrap;
+			overflow: auto;
+		}
+	}
+
+	&__articles-list {
+		@extend %reset;
+		list-style-type: none;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 64px 32px;
+
+		@media (max-width: 1024px) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 48px 16px;
+		}
+
+		@media (max-width: 550px) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__article {
+	}
+}
+
+.categories {
+
+	&__item {
+	}
+
+	&__btn {
+		@extend %btn-reset;
+
+		font-weight: 700;
+		font-size: rem(32);
+		line-height: lh(48, 32);
+		color: var(--black);
+		position: relative;
+		transition: all 0.3s;
+
+		@media (max-width: 768px) {
+			font-size: rem(24);
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			right: 50%;
+			height: 3px;
+			background-color: var(--orange);
+			transition: all 0.3s;
+		}
+
+		&:hover,
+		&.active {
+			color: var(--orange);
+
+			&::after {
+				left: 0;
+				right: 0;
+			}
+		}
+	}
+}
+
+.article {
+
+	&__link-wrapper {
+		color: inherit;
+		text-decoration: none;
+
+		// растягиваем ссылку-обёртку на всю высоту род.эл-та article (li)
+		display: block;
+		height: 100%;
+
+		// обращаемся ко всем доч.эл-там ссылки-обёртки
+		& > *:not(:last-child) {
+			margin-bottom: 16px;
+		}
+
+		&:hover {
+			.article__image {
+				img,
+				source {
+					transform: scale(1.2);
+				}
+			}
+
+			.article__title {
+				color: var(--orange);
+			}
+		}
+	}
+
+	&__image {
+		position: relative;
+		overflow: hidden; // чтобы при хавере картинка не вылазила за пределы коробки
+		padding-bottom: calc(266 / 405 * 100%); // пропорциональная картинка === удобно для адаптива === высоту / ширину * 100%
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+
+		img,
+		source {
+			@extend %img-bg;
+			transition: all 0.3s;
+		}
+	}
+
+	&__date {
+		@extend %reset;
+	}
+
+	&__title {
+		@extend %reset;
+
+		color: var(--black);
+		font-weight: 700;
+		font-size: rem(32);
+		line-height: lh(48, 32);
+		transition: all 0.3s;
+
+		@media (max-width: 768px) {
+			font-size: rem(22);
+		}
+	}
+
+	&__text {
+		@extend %reset;
+
+		color: var(--light-black);
+	}
+}

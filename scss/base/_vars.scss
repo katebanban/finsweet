@@ -6,6 +6,7 @@
 	--bg-gray: #F2F2F2;
 	--bg-gray2: #E2E6E9;
 	--white: #fff;
+	--light-black: #232536;
 	--black: #1e1b1b;
 	--orange: #ff6433;
 	--green: #61c3a1;
@@ -39,4 +40,22 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+%btn-reset {
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	font: inherit;
+}
+
+%img-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
