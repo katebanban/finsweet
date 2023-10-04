@@ -8,10 +8,12 @@
 
 	<link href="./libs/normalize.css" rel="stylesheet">
 	<link href="./libs/fancybox/fancybox.css" rel="stylesheet">
+	<link href="./libs/swiper/swiper-bundle.min.css" rel="stylesheet">
 	<link href="./css/style.css" rel="stylesheet">
 
 	<!-- ! defer для скриптов в head ОБЯЗАТЕЛЕН -->
 	<script src="./libs/fancybox/fancybox.umd.js" defer></script>
+	<script src="./libs/swiper/swiper-bundle.min.js" defer></script>
 	<script src="./js/script.js" defer></script>
 </head>
 
@@ -510,6 +512,115 @@
 								</a>
 							</li>
 						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="testimonials">
+				<div class="container">
+					<div class="testimonials__body">
+						<h2 class="testimonials__title section-title">
+							Our customers say the nicest things about our service
+						</h2>
+						<div class="testimonials__slider testimonials-slider swiper">
+							<ul class="testimonials-slider__list swiper-wrapper">
+								<li class="testimonials-slider__slide testimonials-slide swiper-slide">
+									<div class="testimonials-slide__body">
+										<div class="testimonials-slide__info">
+											<div class="testimonials-slide__image">
+												<img src="./images/icons/user-1.jpg" alt="User">
+											</div>
+											<div class="testimonials-slide__personal-data">
+												<p class="testimonials-slide__name">Jonathan Vallem</p>
+												<p class="testimonials-slide__city">New york</p>
+											</div>
+										</div>
+										<p class="testimonials-slide__text">
+											I have got my car repaired at Finsweet many times before, they are good at what they do. Not only did they repair my car in a short comprehensive look on all the working. I have got my car repaired at Finsweet many times before, they are good at what they do. Not only did they repair my car in a short comprehensive look on all the working
+										</p>
+									</div>
+								</li>
+								<li class="testimonials-slider__slide testimonials-slide swiper-slide">
+									<div class="testimonials-slide__body">
+										<div class="testimonials-slide__info">
+											<div class="testimonials-slide__image">
+												<img src="./images/icons/user-2.jpg" alt="User">
+											</div>
+											<div class="testimonials-slide__personal-data">
+												<p class="testimonials-slide__name">Smith Johnson</p>
+												<p class="testimonials-slide__city">Boston</p>
+											</div>
+										</div>
+										<p class="testimonials-slide__text">
+											I have got my car repaired at Finsweet many times before, they are good at what they do. Not only did they repair my car in a short comprehensive look on all the working
+										</p>
+									</div>
+								</li>
+								<li class="testimonials-slider__slide testimonials-slide swiper-slide">
+									<div class="testimonials-slide__body">
+										<div class="testimonials-slide__info">
+											<div class="testimonials-slide__image">
+												<img src="./images/icons/user-1.jpg" alt="User">
+											</div>
+											<div class="testimonials-slide__personal-data">
+												<p class="testimonials-slide__name">Jonathan Vallem</p>
+												<p class="testimonials-slide__city">New york</p>
+											</div>
+										</div>
+										<p class="testimonials-slide__text">
+											I have got my car repaired at Finsweet many times before, they are good at what they do. Not only did they repair my car in a short comprehensive look on all the working
+										</p>
+									</div>
+								</li>
+								<li class="testimonials-slider__slide testimonials-slide swiper-slide">
+									<div class="testimonials-slide__body">
+										<div class="testimonials-slide__info">
+											<div class="testimonials-slide__image">
+												<img src="./images/icons/user-2.jpg" alt="User">
+											</div>
+											<div class="testimonials-slide__personal-data">
+												<p class="testimonials-slide__name">Smith Johnson</p>
+												<p class="testimonials-slide__city">Boston</p>
+											</div>
+										</div>
+										<p class="testimonials-slide__text">
+											I have got my car repaired at Finsweet many times before, they are good at what they do. Not only did they repair my car in a short comprehensive look on all the working
+										</p>
+									</div>
+								</li>
+								<li class="testimonials-slider__slide testimonials-slide swiper-slide">
+									<div class="testimonials-slide__body">
+										<div class="testimonials-slide__info">
+											<div class="testimonials-slide__image">
+												<img src="./images/icons/user-1.jpg" alt="User">
+											</div>
+											<div class="testimonials-slide__personal-data">
+												<p class="testimonials-slide__name">Jonathan Vallem</p>
+												<p class="testimonials-slide__city">New york</p>
+											</div>
+										</div>
+										<p class="testimonials-slide__text">
+											I have got my car repaired at Finsweet many times before, they are good at what they do. Not only did they repair my car in a short comprehensive look on all the working
+										</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!--! пагинация и навигация могут быть и за пределами свайпера, привязка идёт через js -->
+						<div class="testimonials-slider__controls">
+							<div class="testimonials-slider__pagination"></div>
+							<div class="testimonials-slider__btn-box">
+								<button class="testimonials-slider__btn-prev" type="button">
+									<svg>
+										<use xlink:href='./images/sprite.svg#arrow-prev'></use>
+									</svg>
+								</button>
+								<button class="testimonials-slider__btn-next" type="button">
+									<svg>
+										<use xlink:href='./images/sprite.svg#arrow-next'></use>
+									</svg>
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>

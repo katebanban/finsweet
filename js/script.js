@@ -117,3 +117,30 @@ window.addEventListener('load', function() {
 	sortArticles('id');
 })
 
+
+//* SWIPER
+const testimonialsSlider = new Swiper('.testimonials-slider', {
+	slidesPerView: 1,
+	spaceBetween: 48,
+	loop: true,
+	autoHeight: true, //! Чтобы пагинация и стрелки не стояли на месте, когда слайды разной высоты, а двигались вверх/вниз
+
+	// Стрелки навигации
+	navigation: {
+		nextEl: ".testimonials-slider__btn-next",
+		prevEl: ".testimonials-slider__btn-prev",
+	},
+
+	// Пагинация (точки)
+	pagination: {
+		el: ".testimonials-slider__pagination",
+		clickable: true,
+	},
+
+	// Адаптив (свыше 1024px будет показано 2 слайда, при 1024px и ниже = 1 слайд)
+	breakpoints: {
+		1025: {
+			slidesPerView: 2,
+		}
+	}
+})

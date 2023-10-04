@@ -1,0 +1,213 @@
+.testimonials {
+	background: var(--bg-gray);
+	padding: 128px 0;
+
+	@media (max-width: 1024px) {
+		padding: 90px 0;
+	}
+
+	@media (max-width: 768px) {
+		padding: 60px 0;
+	}
+
+	&__body {
+	}
+
+	&__title {
+		max-width: 909px;
+		text-align: center;
+		margin: 0 auto;
+
+		&:not(:last-child) {
+			margin-bottom: 76px;
+
+			@media (max-width: 1024px) {
+				margin-bottom: 48px;
+			}
+
+			@media (max-width: 768px) {
+				margin-bottom: 32px;
+			}
+		}
+	}
+
+	&__slider {
+	}
+}
+
+.testimonials-slider {
+	&:not(:last-child) {
+		margin-bottom: 48px;
+	}
+
+	&__list {
+		@extend %reset;
+		list-style-type: none;
+	}
+
+	&__slide {
+	}
+
+	&__controls {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		//height: 100%; //* не поняла, зачем это тут, поэтому убрала
+		padding: 0 200px; // для того чтобы пагинация не налазила на кнопки при большои количестве слайдов
+
+		@media (max-width: 768px) {
+			padding: unset;
+		}
+	}
+
+	&__pagination {
+		display: inline-flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+
+		@media (max-width: 768px) {
+			display: none;
+		}
+
+		//! классы берутся из инструмента разработчика
+		// одна точка пагинации
+		.swiper-pagination-bullet {
+			width: 32px;
+			height: 4px;
+			border-radius: 0;
+			margin: 0 !important;
+			background: var(--light-gray);
+			opacity: 1;
+			transition: all 0.3s;
+		}
+
+		.swiper-pagination-bullet-active {
+			background: var(--orange);
+		}
+	}
+
+	&__btn-box {
+		display: flex;
+		gap: 24px;
+		position: absolute;
+		z-index: 3;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	&__btn-prev,
+	&__btn-next {
+		@extend %btn-reset;
+		width: 48px;
+		height: 48px;
+		background: var(--white);
+		border-radius: 50%;
+		padding: 13px; // на глаз
+		transition: all 0.3s;
+
+		svg {
+			fill: var(--black);
+			height: 100%; //* каким-то непонятным мне образом делает svg ниже и загоняет стрелки внутрь кружка
+			transition: all 0.3s;
+		}
+
+		&:hover {
+			background: var(--black);
+			transform: scale(1.1);
+
+			svg {
+				fill: var(--white);
+			}
+		}
+	}
+
+	&__btn-prev {
+	}
+
+	&__btn-next {
+	}
+}
+
+.testimonials-slide {
+
+	&__body {
+		background: var(--white);
+		padding: 72px;
+		border-radius: 6px;
+		border: 1px solid rgba(172, 172, 172, 0.29);
+		box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.02); // на глаз
+
+		@media (max-width: 768px) {
+			padding: 48px;
+		}
+
+		@media (max-width: 550px) {
+			padding: 32px 24px;
+		}
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__image {
+		width: 64px;
+		height: 64px;
+		border-radius: 100%; // 100% = 50%, оба значения делают круг
+		overflow: hidden;
+		position: relative;
+		flex-shrink: 0; // запрещаем картинке уменьшаться
+
+		img,
+		source {
+			@extend %img-bg;
+		}
+	}
+
+	&__personal-data {
+		//! * = & > * === то же самое, обращение ко всем детям
+		* {
+			@extend %reset;
+		}
+	}
+
+	&__name,
+	&__text {
+		line-height: lh(36, 24);
+		color: var(--black);
+	}
+
+	&__name {
+		font-size: rem(24);
+
+		@media (max-width: 768px) {
+			font-size: rem(22);
+		}
+
+		@media (max-width: 550px) {
+			font-size: rem(20);
+		}
+	}
+
+	&__city {
+		color: var(--light-gray);
+	}
+
+	&__text {
+		@extend %reset;
+		font-size: rem(22); // на глаз
+
+		@media (max-width: 550px) {
+			font-size: rem(18);
+		}
+	}
+}
