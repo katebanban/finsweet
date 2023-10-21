@@ -1,0 +1,151 @@
+.faq {
+	padding: 128px 0;
+	background-color: var(--bg-gray2);
+
+	@media (max-width: 1024px) {
+		padding: 90px 0;
+	}
+
+	@media (max-width: 758px) {
+		padding: 60px 0;
+	}
+
+	&__body {
+	}
+
+	&__title {
+		text-align: center;
+
+		&:not(:last-child) {
+			margin-bottom: 86px;
+
+			@media (max-width: 1024px) {
+				margin-bottom: 60px;
+			}
+
+			@media (max-width: 768px) {
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	&__list {
+		@extend %reset;
+		list-style-type: none;
+	}
+
+	&__item {
+		background: var(--white);
+		padding: 40px;
+
+		@media (max-width: 550px) {
+			padding: 20px;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+}
+
+.spoiler {
+	&.active {
+		.spoiler__title {
+			&:not(:last-child) {
+				margin-bottom: 12px;
+			}
+
+			span {
+				&::before {
+					transform: translate(-50%) rotate(0deg);
+				}
+			}
+		}
+
+		.spoiler__content {
+			height: 100%;
+		}
+	}
+
+	&__title {
+		@extend %reset;
+
+		font-size: rem(24);
+		line-height: lh(36, 24);
+		color: var(--black);
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px; // отступ безопасности
+		
+		position: relative;
+		cursor: pointer;
+		transition: all 0.3s;
+
+		@media (max-width: 550px) {
+			font-size: rem(20);
+		}
+
+		&:hover {
+			color: var(--orange);
+		}
+
+		span {
+			width: 50px;
+			height: 50px;
+			background: var(--orange);
+			flex-shrink: 0;
+			position: relative;
+
+			@media (max-width: 550px) {
+				width: 40px;
+				height: 40px;
+			}
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				width: 18px;
+				height: 2px;
+				background: var(--white);
+				border-radius: 2px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%);
+				transition: all 0.3s;
+			}
+
+			&::before {
+				transform: translate(-50%) rotate(90deg);
+			}
+		}
+	}
+
+	&__content {
+		color: var(--light-gray);
+		font-size: rem(18);
+		padding-right: 114px;
+		height: 0;
+		overflow: hidden;
+		transition: all 0.3s;
+
+		@media (max-width: 768px) {
+			padding-right: 55px;
+		}
+
+		@media (max-width: 550px) {
+			padding-right: unset;
+			font-size: rem(16);
+		}
+
+		* {
+			@extend %reset;
+
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+		}
+	}
+}

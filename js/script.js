@@ -144,3 +144,29 @@ const testimonialsSlider = new Swiper('.testimonials-slider', {
 		}
 	}
 })
+
+
+//* SPOILER
+const allSpoilerEl = document.querySelectorAll('.spoiler');
+
+allSpoilerEl.forEach((spoiler) => {
+	let title = spoiler.querySelector('.spoiler__title'); // spoiler.children[0]
+	let content = spoiler.querySelector('.spoiler__content'); // spoiler.children[1]
+	let contentHeight = content.scrollHeight; // scrollHeight взяли из инструмента разработчика
+
+	if (spoiler.classList.contains('active')) {
+		content.style.height = `${contentHeight}px`;
+	} else {
+		content.style.height = 0;
+	}
+
+	title.addEventListener('click', () => {
+		if (spoiler.classList.contains('active')) {
+			spoiler.classList.remove('active');
+			content.style.height = 0;
+		} else {
+			spoiler.classList.add('active');
+			content.style.height = `${contentHeight}px`;
+		}
+	})
+})
