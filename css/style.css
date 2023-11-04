@@ -1,12 +1,13 @@
 :root {
   --gray: #787676;
   --light-gray: #939191;
-  --ultralight-gray: #d8d7d7;
-  --bg-gray: #F2F2F2;
   --bg-gray2: #E2E6E9;
+  --bg-gray: #F2F2F2;
+  --ultralight-gray: #d8d7d7;
   --white: #fff;
-  --light-black: #232536;
   --black: #1e1b1b;
+  --shadow-black: #222020;
+  --light-black: #232536;
   --orange: #ff6433;
   --green: #61c3a1;
   --green2: #5cba99;
@@ -14,10 +15,11 @@
   --container-width: 1280px;
   --container-gap: 15px;
   --header-height: 88px;
+  --input-height: 68px;
   --main-font: "Manrope", sans-serif;
 }
 
-.spoiler__content *, .spoiler__title, .faq__list, .testimonials-slide__text, .testimonials-slide__personal-data *, .testimonials-slider__list, .article__text, .article__title, .article__date, .blog__articles-list, .blog__categories-list, .brands__list, .experience__text, .experience__list, .call-to-action__title, .process-item__text, .process-item__title, .process__list, .process__text, .process__title, .section-title {
+.address__item *, .form__select ul, .spoiler__content *, .spoiler__title, .faq__list, .testimonials-slide__text, .testimonials-slide__personal-data *, .testimonials-slider__list, .article__text, .article__title, .article__date, .blog__articles-list, .blog__categories-list, .brands__list, .experience__text, .experience__list, .call-to-action__title, .process-item__text, .process-item__title, .process__list, .process__text, .process__title, .section-title {
   margin: 0;
   padding: 0;
 }
@@ -37,7 +39,7 @@
   font: inherit;
 }
 
-.testimonials-slide__image img,
+.get-in-touch__image img, .testimonials-slide__image img,
 .testimonials-slide__image source, .article__image img,
 .article__image source {
   position: absolute;
@@ -89,11 +91,11 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html,
 body {
-  scroll-behavior: smooth;
   min-height: 100vh;
 }
 
@@ -105,7 +107,10 @@ source {
 
 a,
 input,
-button {
+button,
+textarea,
+select,
+option {
   cursor: pointer;
   font: inherit;
 }
@@ -163,6 +168,7 @@ body {
 }
 .btn--black {
   background: var(--black);
+  color: var(--white);
 }
 .btn--black:hover {
   background: transparent;
@@ -1528,4 +1534,227 @@ body {
 }
 .spoiler__content *:not(:last-child) {
   margin-bottom: 8px;
+}
+
+.get-in-touch {
+  padding-top: 120px;
+  background: var(--white);
+}
+@media (max-width: 1024px) {
+  .get-in-touch {
+    padding-top: 90px;
+  }
+}
+@media (max-width: 768px) {
+  .get-in-touch {
+    padding-top: 60px;
+  }
+}
+.get-in-touch__title {
+  max-width: 480px;
+}
+@media (max-width: 768px) {
+  .get-in-touch__title {
+    min-width: 100%;
+    text-align: center;
+  }
+}
+.get-in-touch__title:not(:last-child) {
+  margin-bottom: 48px;
+}
+@media (max-width: 768px) {
+  .get-in-touch__title:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+.get-in-touch__contacts-box {
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .get-in-touch__contacts-box {
+    flex-wrap: wrap;
+  }
+}
+.get-in-touch__contacts-box:not(:last-child) {
+  margin-bottom: 180px;
+}
+@media (max-width: 1024px) {
+  .get-in-touch__contacts-box:not(:last-child) {
+    margin-bottom: 90px;
+  }
+}
+@media (max-width: 768px) {
+  .get-in-touch__contacts-box:not(:last-child) {
+    margin-bottom: 60px;
+  }
+}
+.get-in-touch__form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 0 1 625px;
+}
+@media (max-width: 768px) {
+  .get-in-touch__form {
+    flex: 1 1 100%;
+  }
+}
+.get-in-touch__map {
+  margin-bottom: -160px;
+  position: relative;
+  z-index: 2;
+  filter: saturate(0);
+  transition: all 0.3s;
+}
+.get-in-touch__map:hover {
+  filter: unset;
+}
+.get-in-touch__map iframe {
+  height: 512px;
+}
+@media (max-width: 1024px) {
+  .get-in-touch__map iframe {
+    height: 400px;
+  }
+}
+.get-in-touch__image {
+  position: relative;
+  height: 448px;
+}
+@media (max-width: 1024px) {
+  .get-in-touch__image {
+    height: 312px;
+  }
+}
+@media (max-width: 550px) {
+  .get-in-touch__image {
+    height: 250px;
+  }
+}
+.form__input {
+  padding: 20px 40px;
+  color: var(--black);
+  border: none;
+  background: var(--bg-gray);
+}
+@media (max-width: 768px) {
+  .form__input {
+    padding: 20px;
+  }
+}
+.form__select {
+  position: relative;
+}
+.form__select.active .form__select-input-box::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+.form__select input {
+  width: 100%;
+}
+.form__select ul {
+  list-style-type: none;
+  position: absolute;
+  top: var(--input-height);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  border: 2px solid var(--light-gray);
+  display: none;
+}
+.form__select ul.active {
+  display: block;
+}
+.form__select ul li:last-child {
+  border-bottom: none;
+}
+.form__select ul li.active button {
+  background: var(--orange);
+  color: var(--white);
+}
+.form__select ul button {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  padding: 20px 40px;
+  background: var(--bg-gray);
+  color: var(--black);
+  transition: all 0.3s;
+  text-align: left;
+}
+.form__select ul button:hover, .form__select ul button:focus {
+  background: var(--light-gray);
+}
+.form__select-input-box {
+  position: relative;
+}
+.form__select-input-box:after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 25px;
+  height: 25px;
+  transform: translateY(-50%);
+  background: url("../images/icons/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: all 0.3s;
+}
+.form__textarea {
+  resize: none;
+  min-height: 150px;
+}
+.form__btn {
+  margin-top: 40px;
+  align-self: flex-start;
+}
+@media (max-width: 550px) {
+  .form__btn {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+.address {
+  font-style: normal;
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.address__title {
+  color: var(--gray);
+}
+.address__title:not(:last-child) {
+  margin-bottom: 2px;
+}
+.address__text {
+  font-size: 1.5rem;
+  line-height: 150%;
+}
+@media (max-width: 550px) {
+  .address__text {
+    font-size: 1.25rem;
+  }
+}
+.address__link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  font-size: 1.5rem;
+  line-height: 150%;
+  transition: all 0.3s;
+}
+@media (max-width: 550px) {
+  .address__link {
+    font-size: 1.25rem;
+  }
+}
+.address__link:hover {
+  color: var(--orange);
 }

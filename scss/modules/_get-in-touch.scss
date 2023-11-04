@@ -1,0 +1,271 @@
+.get-in-touch {
+	padding-top: 120px;
+	background: var(--white);
+
+	@media (max-width: 1024px) {
+		padding-top: 90px;
+	}
+
+	@media (max-width: 768px) {
+		padding-top: 60px;
+	}
+
+	&__body {
+	}
+
+	&__title {
+		max-width: 480px; // на глаз
+
+		@media (max-width: 768px) {
+			min-width: 100%;
+			text-align: center;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 48px;
+
+			@media (max-width: 768px) {
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	&__contacts-box {
+		display: flex;
+		gap: 32px; // оступ безопасности
+		justify-content: space-between;
+
+		@media (max-width: 768px) {
+			flex-wrap: wrap;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 180px;
+
+			@media (max-width: 1024px) {
+				margin-bottom: 90px;
+			}
+
+			@media (max-width: 768px) {
+				margin-bottom: 60px;
+			}
+		}
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 8px; // на глаз
+
+		flex: 0 1 625px;
+
+		@media (max-width: 768px) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__address {
+	}
+
+	&__map {
+		margin-bottom: -160px;
+		position: relative;
+		z-index: 2;
+		filter: saturate(0); // делает карту бесцветной (ЧБ)
+		transition: all 0.3s;
+
+		&:hover {
+			filter: unset;
+		}
+
+		iframe {
+			height: 512px;
+
+			@media (max-width: 1024px) {
+				height: 400px;
+			}
+		}
+	}
+
+	&__image {
+		position: relative;
+		height: 448px;
+
+		@media (max-width: 1024px) {
+			height: 312px;
+		}
+
+		//@media (max-width: 768px) {
+		//	height: 312px;
+		//}
+
+		@media (max-width: 550px) {
+			height: 250px;
+		}
+
+		img {
+			@extend %img-bg;
+		}
+	}
+}
+
+.form {
+
+	&__input {
+		padding: 20px 40px; // на глаз
+		color: var(--black);
+		border: none;
+		background: var(--bg-gray);
+
+		@media (max-width: 768px) {
+			padding: 20px;
+		}
+	}
+
+	&__select {
+		position: relative;
+
+		&.active {
+			.form__select-input-box {
+				&::after {
+					transform: translateY(-50%) rotate(180deg);
+				}
+			}
+		}
+
+		input {
+			width: 100%;
+		}
+
+		ul {
+			@extend %reset;
+			list-style-type: none;
+
+			position: absolute;
+			top: var(--input-height);
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			border: 2px solid var(--light-gray);
+			display: none;
+
+			&.active {
+				display: block;
+			}
+
+			li {
+				&:last-child {
+					border-bottom: none;
+				}
+
+				&.active {
+					button {
+						background: var(--orange);
+						color: var(--white);
+					}
+				}
+			}
+
+			button {
+				width: 100%;
+				border: none;
+				cursor: pointer;
+				padding: 20px 40px;
+				background: var(--bg-gray);
+				color: var(--black);
+				transition: all 0.3s;
+				text-align: left;
+
+				&:hover,
+				&:focus {
+					background: var(--light-gray);
+				}
+			}
+		}
+	}
+
+	&__select-input-box {
+		position: relative;
+
+		// стрелочка на селекторе
+		&:after {
+			content: '';
+			pointer-events: none; //! скрывает возможность клика по элементу
+			position: absolute;
+			top: 50%;
+			right: 16px; // на глаз
+			width: 25px; // на глаз
+			height: 25px; // на глаз
+			transform: translateY(-50%);
+			background: url('../images/icons/arrow-down.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			transition: all 0.3s;
+		}
+	}
+
+	&__textarea {
+		resize: none;
+		min-height: 150px; // на глаз
+	}
+
+	&__btn {
+		margin-top: 40px;
+		align-self: flex-start;
+
+		@media (max-width: 550px) {
+			margin-top: 20px;
+			width: 100%;
+		}
+	}
+}
+
+.address {
+	font-style: normal;
+	color: var(--black);
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+
+	&__item {
+		*{
+			@extend %reset;
+		}
+	}
+
+	&__title {
+		color: var(--gray);
+
+		&:not(:last-child) {
+			margin-bottom: 2px;
+		}
+	}
+
+	&__text {
+		font-size: rem(24);
+		line-height: lh(36, 24);
+
+		@media (max-width: 550px) {
+			font-size: rem(20);
+		}
+	}
+
+	&__link {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+		font-size: rem(24);
+		line-height: lh(36, 24);
+		transition: all 0.3s;
+
+		@media (max-width: 550px) {
+			font-size: rem(20);
+		}
+
+		&:hover {
+			color: var(--orange);
+		}
+	}
+}

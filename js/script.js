@@ -170,3 +170,6 @@ allSpoilerEl.forEach((spoiler) => {
 		}
 	})
 })
+
+
+//* CUSTOM SELECT

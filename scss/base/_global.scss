@@ -6,11 +6,11 @@
 
 html {
 	box-sizing: border-box;
+	scroll-behavior: smooth; //? НЕ РАБОТАЕТ?
 }
 
 html,
 body {
-	scroll-behavior: smooth;
 	min-height: 100vh;
 }
 
@@ -22,7 +22,10 @@ source {
 
 a,
 input,
-button {
+button,
+textarea,
+select,
+option {
 	cursor: pointer;
 	font: inherit;
 }
@@ -83,6 +86,7 @@ body {
 
 	&--black {
 		background: var(--black);
+		color: var(--white);
 
 		&:hover {
 			background: transparent;
