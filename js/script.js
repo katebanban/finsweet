@@ -173,3 +173,42 @@ allSpoilerEl.forEach((spoiler) => {
 
 
 //* CUSTOM SELECT
+const select = document.querySelector('[data-select]');
+const selectInput = document.querySelector('[data-select-input]');
+const selectList = document.querySelector('[data-select-list]');
+const allSelectItems = document.querySelectorAll('[data-select-list] li');
+
+// убираем возможность что-то писать в input
+selectInput.setAttribute('readonly', "");
+
+// при нажатии переключает (включает/выключает) класс active ===> список выпадает/прячется и стрелочка переворачивается вверх/вниз
+selectInput.addEventListener('click', () => {
+	selectList.classList.toggle('active');
+	select.classList.toggle('active');
+})
+
+// перебираем все пункты списка селектора
+allSelectItems.forEach((item) => {
+	// при нажатии на пункт списка
+	item.addEventListener('click', () => {
+		// сначала уберётся класс active у ВСЕХ пунктов списка
+		allSelectItems.forEach((item) => {
+			item.classList.remove('active');
+		})
+
+		// затем класс active ДОБАВИТСЯ непосредственно к нажатому пункту списка и УБЕРЁТСЯ у списка и у селектора (чтобы после нажатия на пункт списка -> список спрятался, а стрелка селектора повернулась в обратную сторону)
+		item.classList.add('active');
+		selectList.classList.remove('active');
+		select.classList.remove('active');
+
+		// в конце (после нажатия на пункт списка) в инпуте отобразится значение, которое мы взяли из дата-атрибута нажатого пункта списка
+		selectInput.value = item.getAttribute('data-select-value');
+	})
+})
+
+
+//* АВТОВЫЧИСЛЕНИЕ ВЫСОТЫ selectInput
+const selectInputHeight = selectInput.offsetHeight;
+
+// меняем переменную c высотой инпута из SCSS на переменную c высотой инпута из JS
+root.style.setProperty('--input-height', `${selectInputHeight}px`);
