@@ -1,0 +1,182 @@
+.footer {
+	background: var(--black);
+	color: var(--white);
+
+	&__top {
+		padding: 128px 0;
+		background: var(--shadow-black);
+		
+		@media (max-width: 1024px) {
+			padding: 90px 0;
+		}
+
+		@media (max-width: 768px) {
+			padding: 60px 0;
+		}
+	}
+
+	&__bottom {
+		padding: 64px 0;
+
+		@media (max-width: 1024px) {
+			padding: 30px 0;
+		}
+	}
+}
+
+.footer-top {
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		gap: 30px; // отступ безопасности
+		flex-wrap: wrap;
+
+		@media (max-width: 768px) {
+			justify-content: center;
+			text-align: center;
+		}
+	}
+
+	&__info {
+		flex: 0 1 465px;
+	}
+
+	&__title {
+		@extend %reset;
+		font-weight: 700;
+		font-size: rem(48);
+		line-height: 140%;
+
+		@media (max-width: 768px) {
+			font-size: rem(38);
+		}
+
+		@media (max-width: 550px) {
+			font-size: rem(26);
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 64px;
+
+			@media (max-width: 768px) {
+				margin-bottom: 32px;
+			}
+		}
+	}
+
+	&__social {
+		@media (max-width: 768px) {
+			justify-content: center;
+			text-align: center;
+		}
+	}
+
+	&__address {
+		flex: 0 1 470px;
+		margin-right: 5%; // на глаз
+
+		@media (max-width: 768px) {
+			margin-right: unset;
+		}
+
+		&.address {
+			color: inherit;
+		}
+
+		.address__title {
+			font-size: rem(18);
+		}
+	}
+}
+
+.social {
+	@extend %reset;
+	list-style-type: none;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+
+	&__item {
+		width: 24px;
+		height: 24px;
+	}
+
+	&__link {
+		color: var(--white);
+		display: flex;
+		height: 100%;
+		transition: all 0.3s;
+
+		&:hover {
+			color: var(--orange);
+		}
+
+		svg {
+			fill: currentColor;
+			height: 100%;
+		}
+	}
+}
+
+.footer-bottom {
+
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 30px; // ОБ
+
+		@media (max-width: 768px) {
+			flex-direction: column;
+		}
+	}
+
+	&__logo {
+		flex-shrink: 0;
+		display: flex; // чтобы растянуть картинку лого по размеру ссылки
+	}
+
+	&__menu {
+		@media (max-width: 1024px) {
+			display: block;
+			position: static;
+			width: auto;
+			padding-top: unset;
+			padding-bottom: unset;
+			height: unset;
+			overflow: unset;
+			background-color: unset;
+		}
+
+		.menu__list {
+			@media (max-width: 1024px) {
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+
+			@media (max-width: 768px) {
+				flex-direction: column;
+				flex-wrap: nowrap;
+			}
+		}
+
+		.menu__link {
+			color: inherit;
+
+			&:hover {
+				color: var(--orange);
+			}
+		}
+	}
+
+	&__copy {
+		flex-shrink: 0;
+		font: inherit;
+		color: var(--light-gray);
+	}
+}
+
+.copy-year {
+	color: var(--orange);
+}

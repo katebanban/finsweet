@@ -19,7 +19,7 @@
   --main-font: "Manrope", sans-serif;
 }
 
-.address__item *, .form__select ul, .spoiler__content *, .spoiler__title, .faq__list, .testimonials-slide__text, .testimonials-slide__personal-data *, .testimonials-slider__list, .article__text, .article__title, .article__date, .blog__articles-list, .blog__categories-list, .brands__list, .experience__text, .experience__list, .call-to-action__title, .process-item__text, .process-item__title, .process__list, .process__text, .process__title, .section-title {
+.social, .footer-top__title, .address__item *, .form__select ul, .spoiler__content *, .spoiler__title, .faq__list, .testimonials-slide__text, .testimonials-slide__personal-data *, .testimonials-slider__list, .article__text, .article__title, .article__date, .blog__articles-list, .blog__categories-list, .brands__list, .experience__text, .experience__list, .call-to-action__title, .process-item__text, .process-item__title, .process__list, .process__text, .process__title, .section-title {
   margin: 0;
   padding: 0;
 }
@@ -148,6 +148,13 @@ body {
 
 .no-scroll {
   overflow: hidden;
+}
+
+.logo {
+  transition: all 0.3s;
+}
+.logo:hover {
+  transform: scale(1.1);
 }
 
 .btn {
@@ -301,13 +308,6 @@ body {
 }
 .header__contact-phone:hover::before {
   background-color: var(--orange);
-}
-
-.logo {
-  transition: all 0.3s;
-}
-.logo:hover {
-  transform: scale(1.1);
 }
 
 @media (max-width: 1024px) {
@@ -1756,5 +1756,171 @@ body {
   }
 }
 .address__link:hover {
+  color: var(--orange);
+}
+
+.footer {
+  background: var(--black);
+  color: var(--white);
+}
+.footer__top {
+  padding: 128px 0;
+  background: var(--shadow-black);
+}
+@media (max-width: 1024px) {
+  .footer__top {
+    padding: 90px 0;
+  }
+}
+@media (max-width: 768px) {
+  .footer__top {
+    padding: 60px 0;
+  }
+}
+.footer__bottom {
+  padding: 64px 0;
+}
+@media (max-width: 1024px) {
+  .footer__bottom {
+    padding: 30px 0;
+  }
+}
+
+.footer-top__body {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .footer-top__body {
+    justify-content: center;
+    text-align: center;
+  }
+}
+.footer-top__info {
+  flex: 0 1 465px;
+}
+.footer-top__title {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 140%;
+}
+@media (max-width: 768px) {
+  .footer-top__title {
+    font-size: 2.375rem;
+  }
+}
+@media (max-width: 550px) {
+  .footer-top__title {
+    font-size: 1.625rem;
+  }
+}
+.footer-top__title:not(:last-child) {
+  margin-bottom: 64px;
+}
+@media (max-width: 768px) {
+  .footer-top__title:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+@media (max-width: 768px) {
+  .footer-top__social {
+    justify-content: center;
+    text-align: center;
+  }
+}
+.footer-top__address {
+  flex: 0 1 470px;
+  margin-right: 5%;
+}
+@media (max-width: 768px) {
+  .footer-top__address {
+    margin-right: unset;
+  }
+}
+.footer-top__address.address {
+  color: inherit;
+}
+.footer-top__address .address__title {
+  font-size: 1.125rem;
+}
+
+.social {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.social__item {
+  width: 24px;
+  height: 24px;
+}
+.social__link {
+  color: var(--white);
+  display: flex;
+  height: 100%;
+  transition: all 0.3s;
+}
+.social__link:hover {
+  color: var(--orange);
+}
+.social__link svg {
+  fill: currentColor;
+  height: 100%;
+}
+
+.footer-bottom__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .footer-bottom__body {
+    flex-direction: column;
+  }
+}
+.footer-bottom__logo {
+  flex-shrink: 0;
+  display: flex;
+}
+@media (max-width: 1024px) {
+  .footer-bottom__menu {
+    display: block;
+    position: static;
+    width: auto;
+    padding-top: unset;
+    padding-bottom: unset;
+    height: unset;
+    overflow: unset;
+    background-color: unset;
+  }
+}
+@media (max-width: 1024px) {
+  .footer-bottom__menu .menu__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 768px) {
+  .footer-bottom__menu .menu__list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}
+.footer-bottom__menu .menu__link {
+  color: inherit;
+}
+.footer-bottom__menu .menu__link:hover {
+  color: var(--orange);
+}
+.footer-bottom__copy {
+  flex-shrink: 0;
+  font: inherit;
+  color: var(--light-gray);
+}
+
+.copy-year {
   color: var(--orange);
 }

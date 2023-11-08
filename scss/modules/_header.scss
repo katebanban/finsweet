@@ -121,14 +121,6 @@
 	}
 }
 
-.logo {
-	transition: all 0.3s;
-
-	&:hover {
-		transform: scale(1.1);
-	}
-}
-
 .menu {
 	@media (max-width: 1024px) {
 		position: absolute;

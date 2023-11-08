@@ -212,3 +212,10 @@ const selectInputHeight = selectInput.offsetHeight;
 
 // меняем переменную c высотой инпута из SCSS на переменную c высотой инпута из JS
 root.style.setProperty('--input-height', `${selectInputHeight}px`);
+
+
+//* ДАТА
+const currentYear = new Date().getFullYear();
+const copyYear = document.querySelector('.copy-year');
+
+copyYear.innerHTML = currentYear;
